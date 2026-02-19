@@ -4,8 +4,14 @@ import streamlit as st
 import pdfplumber
 from crewai import Agent, Task, Crew, LLM
 
-# 1. API KEY SETUP
-API_KEY = "AIzaSyAuHeCreUnkdHv6FR48Hp7ca-IQLcm-yVA"
+# --- SECURE API KEY SETUP ---
+# This tells Streamlit to look for a hidden secret password file
+# If it can't find the secret (like when you test locally), it uses a backup.
+try:
+    API_KEY = st.secrets["GEMINI_API_KEY"]
+except:
+    API_KEY = "PASTE_YOUR_ACTUAL_API_KEY_HERE_FOR_LOCAL_TESTING"
+
 os.environ["GEMINI_API_KEY"] = API_KEY
 
 # Set up the page with a wide layout and a cool icon
