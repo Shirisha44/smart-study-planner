@@ -10,7 +10,7 @@ from crewai import Agent, Task, Crew, LLM
 try:
     API_KEY = st.secrets["GEMINI_API_KEY"]
 except:
-    API_KEY = "PASTE_YOUR_ACTUAL_API_KEY_HERE_FOR_LOCAL_TESTING"
+    API_KEY = "AIzaSyAuHeCreUnkdHv6FR48Hp7ca-IQLcm-yVA"
 
 os.environ["GEMINI_API_KEY"] = API_KEY
 
@@ -161,3 +161,4 @@ if submit:
                 
             except Exception as e:
                 st.error(f"Error during generation: {e}")
+
