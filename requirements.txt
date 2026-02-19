@@ -1,0 +1,4 @@
+crewai
+streamlit
+langchain-google-genai
+litellm
